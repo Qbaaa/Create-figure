@@ -151,39 +151,41 @@ public class Rysunek {
                     int licznosc = 0;
                     System.out.println("Z Figura");
                     System.out.println(Lp.get(i));
-                    System.out.println("przecinaja sie:");
-                    for (int j = i + 1; j < Lp.size(); j++)
-                    {
-                         if (Lp.get(j).getClass().toString().equals(A.getClass().toString()))
-                         {
-                             if(Lp.get(i).przecieciefigur((Kwadrat) Lp.get(j)))
-                             {
-                                 System.out.println(Lp.get(j));
-                                 licznosc++;
-                             }
-                         }
-                         else
-                         {
-                             if(Lp.get(j).getClass().toString().equals(B.getClass().toString()))
-                             {
-                                 if(Lp.get(i).przecieciefigur((Prostokat) Lp.get(j)))
-                                 {
-                                     System.out.println(Lp.get(j));
-                                     licznosc++;
-                                 }
-                             }
-                             else
-                             {
-                                 if(Lp.get(j).getClass().toString().equals(C.getClass().toString()))
-                                 {
-                                     if(Lp.get(i).przecieciefigur((Kolo) Lp.get(j)))
-                                     {
-                                         System.out.println(Lp.get(j));
-                                         licznosc++;
-                                     }
-                                 }
-                             }
-                         }
+                    System.out.println("przecinaja sie:\n");
+                    for (int j = 0 ; j < Lp.size(); j++) {
+                        if (i != j)
+                        {
+                            if (Lp.get(j).getClass().toString().equals(A.getClass().toString()))
+                            {
+                                if (Lp.get(i).przecieciefigur((Kwadrat) Lp.get(j)))
+                                {
+                                    System.out.println(Lp.get(j));
+                                    licznosc++;
+                                }
+                            }
+                            else
+                                {
+                                if (Lp.get(j).getClass().toString().equals(B.getClass().toString()))
+                                {
+                                    if (Lp.get(i).przecieciefigur((Prostokat) Lp.get(j)))
+                                    {
+                                        System.out.println(Lp.get(j));
+                                        licznosc++;
+                                    }
+                                }
+                                else
+                                    {
+                                        if (Lp.get(j).getClass().toString().equals(C.getClass().toString()))
+                                        {
+                                            if (Lp.get(i).przecieciefigur((Kolo) Lp.get(j)))
+                                            {
+                                                System.out.println(Lp.get(j));
+                                                licznosc++;
+                                            }
+                                        }
+                                    }
+                                }
+                        }
                     }
 
                     if(licznosc == 0)
@@ -240,7 +242,7 @@ public class Rysunek {
         }
 
 
-        if (bok < 0 && (pytanie.equals("bokA") || pytanie.equals("bokB"))) throw new IllegalArgumentException("Dlugosc musi byc >=0.");
+        if (bok < 0 && (pytanie.equals("bokA") || pytanie.equals("bokB") || pytanie.equals("promien"))) throw new IllegalArgumentException("Dlugosc musi byc >=0.");
 
         return bok;
     }
